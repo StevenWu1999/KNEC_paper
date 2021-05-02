@@ -121,12 +121,26 @@ keyword1 -- keyword2 -- keyword3
     
 
     \item Opacities\\
-    The average opacities for mixture of r-process elements are mainly determined by initial $Y_e$ of the ejecta. Motivated by (\cite{tanaka2018properties}), we design a simple formula for gray opacity $\kappa$ as a function of initial $Y_e$. For simplicity, opacity does not change over time. It should be noted that multi-color light curves can not be well approximated by gray opacities.
+     Tanaka et al has done detailed research on opacities of mixture of r-process elements. In (\cite{tanaka2018properties}),  they show that bolometric lightcurves with grey opacity of $1.0$ cm$^2$ g$^{-1}$ and $10.0$ cm$^2$ g$^{-1}$ agree with results using wavelength-dependent radiative transfer. The grey opacity values were also adopted for red, purple and blue kilonova components in (\cite{villar2017combined}) to fit AT2017gfo. In our model, we use grey opacity and set its lower and upper bound to $1.0$ cm$^2$ g$^{-1}$ and $10.0$ cm$^2$ g$^{-1}$ respectively. We set the opacity corresponding to $Y_e \ 0.25$ to the intermediate $5.5$ cm$^2$ g$^{-1}$, and then use a simple smooth function to describe the change of opacity $\kappa$ with $Y_e$:
+        
+    
     \begin{equation}
     	\label{opacity_ye}
-    	\kappa = 1 + \frac{9}{1+(4Y_e)^{12}} \mathrm{ cm^2 g^{-1}}
+    	\kappa = 1 + \frac{9}{1+(4Y_e)^{12}}~~ \mathrm{ [cm^2 g^{-1}]}
     \end{equation}
     
+    Figure \ref{opacity_Ye} shows the comparison of our model with (\cite{tanaka2020systematic}) results. It is worth noting that, for simplicity, the opacity in our model is a constant, namely it doesn't change with time or temperature. In addition, grey opacity's application to multicolor light curves needs further study.
+   
+    
+    \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{figures/opacity_Ye.png}
+    \caption{The solid line is opacity as a function of $Y_e$ in our model  (Equation \ref{opacity_Ye}). Little grey squares show Tanaka et al's data, and the large rectangles are the suggested opacity range in their paper. (at 5000 $\sim$ 10000K, and they decrease steeply at lower temperature.) Opacity in our model is a little lower than their results due to the upper bound $10$ cm$^2$ g$^{-1}$ we set.}
+    \label{opacity_Ye}
+    \end{figure} 
+    
+
+
     
     
     
@@ -135,7 +149,7 @@ keyword1 -- keyword2 -- keyword3
     Here, time-dependent heating rates obtained using the nuclear reaction network SkyNet with a FRDM nuclear mass model are employed. A single SkyNet run is determined by the set of thermodynamic variables initial electron fraction $Y_e$, initial specific entropy $s$ and expansion timescale $\tau$. The rates are thus computed on a comprehensive grid with $0.02\leq Y_e\leq0.48$ linearly spaced, $1.82$ $\mathrm{k_B/baryon}$ $\leq s\leq100$ $\mathrm{k_B/baryon}$ and $1.36$ ms $\leq\tau\leq100$ ms log-spaced, the results on a representative subgrid being reported in Figure \ref{heatrates}.\\
     \begin{figure}
     \centering
-    \includegraphics[scale=0.65]{figures/heating/heating rate fits/heatrates.png}
+    \includegraphics[scale=0.6]{figures/heating/heating rate fits/heatrates.png}
     \caption{Heating rate trajectories as obtained by SkyNet on a subgrid of thermodynamic variables $0.05\leq Y_e\leq0.4$, $3$ $\mathrm{k_B/baryon}$ $\leq s\leq50$ $\mathrm{k_B/baryon}$ and $1$ ms $\leq\tau\leq30$ ms for visual clarity. Trajectories are color-coded to indicate different initial electron fractions. Vertical lines correspond to SkyNet noise which is averaged out in the fit procedure.}
     \label{heatrates}
     \end{figure}
